@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>clickncash</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/side.css">
+    <style>
+        td , th{
+            font-size: 15px;
+            padding: 0.3rem 0.5rem !important;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+<!-- header start -->
+<div class="container ">
+    <nav class="navbar fixed-top  my-nav">
+
+        <!-- logo -->
+        <div class="logo">
+            <a href="admin.html"> <img src="assets/images/Logoimg.png" alt=""></a>
+        </div>
+        <!--  -->
+
+        <!-- hamburger for responsive  mobile-->
+        <div class="ham" onclick="openNav()">
+
+            <img src="assets/images/ham.webp" alt="" onclick="openNav()">
+        </div>
+
+        <div id="mySidenav" class="sidenav desktop-none">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <li><a href="index.html" style=" color: #fff;"> Dashboard</a></li>
+
+
+            <div class="reports drop-mobile">
+                <a class=" dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Reports <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu m-0 reports-ul ">
+                    <li><a class="dropdown-item" href="report-ledger.html"><i
+                                class="fa-solid fa-circle-arrow-right "></i>
+                            Ledger</a></li>
+                    <li><a class="dropdown-item" href="report-dmt.html"><i
+                                class="fa-solid fa-circle-arrow-right "></i>
+                            DMT</a></li>
+                    <li><a class="dropdown-item" href="report-aeps.html"><i
+                                class="fa-solid fa-circle-arrow-right "></i>
+                            AEPS</a></li>
+                    <li><a class="dropdown-item" href="report-recharge.html"><i
+                                class="fa-solid fa-circle-arrow-right "></i>
+                            Recharge</a></li>
+                    <li><a class="dropdown-item" href="report-bbps.html"><i
+                                class="fa-solid fa-circle-arrow-right "></i>
+                            BBPs</a></li>
+                    <li><a class="dropdown-item" href="report-credit-fund.html"><i
+                                class="fa-solid fa-circle-arrow-right "></i> Credit
+                            Fund</a></li>
+                    <li><a class="dropdown-item" href="report-debit-fund.html"><i
+                                class="fa-solid fa-circle-arrow-right "></i> Debit
+                            Fund</a></li>
+                    <li><a class="dropdown-item" href="report-wallet-to-wallet.html"><i
+                                class="fa-solid fa-circle-arrow-right "></i> Wallet
+                            To Wallet</a></li>
+                    <li><a class="dropdown-item" href="report-pending-request.html"><i
+                                class="fa-solid fa-circle-arrow-right "></i> All
+                            Pending Request</a></li>
+                    <li><a class="dropdown-item" href="report-fund-request.html"><i
+                                class="fa-solid fa-circle-arrow-right "></i> All
+                            Fund Request</a></li>
+                </ul>
+            </div>
+            <li>
+                <p href="add-money.html"
+                    class="btn btn-sm btn-primary  shadow-none text-white rounded-pill text-center ms-4">Add Money
+                </p>
+            </li>
+            <li>
+                <p href="fund-request.html"
+                    class="btn btn-sm btn-warning  shadow-none text-white rounded-pill text-center ms-4">Fund
+                    Request</p>
+            </li>
+
+        </div>
+
+        <ul class="aeps desktop-aeps-none">
+            <li>AEPS : 2020</li>
+            <li>Main : 2020 </li>
+        </ul>
+
+        <div class="nav-icons">
+            <!-- user profile start-->
+            <div class="msg-box m-0 pe-4">
+                <a class="d-flex align-items-center nav-link dropdown-toggle" href="#" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-bell"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end m-0">
+                    <li><span class="details"> <span class="notification-icon deepPink-bgcolor"> <i
+                                    class="fa fa-check"></i> </span> Congratulations!. </span>
+                    </li>
+                    <li><span class="details"> <span class="notification-icon deepPink-bgcolor"> <i
+                                    class="fa fa-check"></i> </span> Gaurav Accept your Request</span>
+                    </li>
+
+                </ul>
+            </div>
+            <h4 class="user-name"><span>Welcome</span> Admin !!!</h4>
+
+            <div class="user-box m-0">
+                <a class="d-flex align-items-center nav-link dropdown-toggle" href="#" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="assets/images/new-logout.png" class="user-img" alt="user avatar">
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-end m-0">
+                    <div class="name-in-drop">
+                        <span><img src="assets/images/user.jpg" alt=""></span>
+                        <span>Km Priyanka</span>
+                    </div>
+
+                    <hr>
+                    <li><a class="dropdown-item" href="distributor-profile.html"><i
+                                class="fa fa-user"></i><span>Profile</span></a>
+                    </li>
+                    <li><a class="dropdown-item" href="manage-pin.html"><i class='fa fa-user-gear'></i><span>Manage
+                                T-PIN</span></a>
+                    </li>
+                    <li><a class="dropdown-item" href="change-password.html"><i
+                                class="fa-solid fa-user-gear"></i><span>Change Password</span></a>
+                    </li>
+                    <li><a class="dropdown-item" href="certificate.html"><i
+                                class="fa-solid fa-certificate"></i><span>Certificate</span></a>
+                    </li>
+                    </li>
+                    <li>
+                        <div class="dropdown-divider mb-0"></div>
+                    </li>
+                    <li><a class="dropdown-item" href="javascript:;"><i
+                                class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- user profile end -->
+        </div>
+    </nav>
+
+</div>
+<!-- header end -->
+
+
+<div class="subheader"
+style="    background-color: #12cb69">
+<div class="my-menu" id="menu">
+    <ul class="m-0 main">
+        <li><a href="admin.html" style=" color: #fff;"> Dashboard</a></li>
+
+
+
+        <div class="reports">
+            <a class="text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Users <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu m-0 reports-ul sub-menu">
+                <li><a class="dropdown-item" href="admin-create.html"><i
+                            class="fa-solid fa-circle-arrow-right "></i>Create User</a></li>
+                <li><a class="dropdown-item" href="list_of_retailers.html"><i
+                            class="fa-solid fa-circle-arrow-right "></i>List of Retailers</a></li>
+                <li><a class="dropdown-item" href="list_of_distributors.html"><i
+                            class="fa-solid fa-circle-arrow-right "></i>List of Distributors</a></li>
+                <li><a class="dropdown-item" href="list_of_master_distributors.html"><i
+                            class="fa-solid fa-circle-arrow-right "></i>List of Master Distributors</a></li>
+                            <li><a class="dropdown-item" href=""><i
+                                class="fa-solid fa-circle-arrow-right "></i>Change Owner</a></li>
+            </ul>
+        </div>
+
+        <div class="reports">
+            <a class="text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Report <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu m-0 reports-ul sub-menu">
+                <li><a class="dropdown-item" href="create-user.html"><i
+                            class="fa-solid fa-circle-arrow-right "></i> User</a></li>
+
+            </ul>
+        </div>
+
+        <div class="reports">
+            <a class="text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Services <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu m-0 reports-ul sub-menu">
+                <li><a class="dropdown-item" href="create-user.html"><i
+                            class="fa-solid fa-circle-arrow-right "></i> User</a></li>
+
+            </ul>
+        </div>
+
+        <div class="reports">
+            <a class="text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Margin <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu m-0 reports-ul sub-menu">
+                <li><a class="dropdown-item" href="create-user.html"><i
+                            class="fa-solid fa-circle-arrow-right "></i> User</a></li>
+
+            </ul>
+        </div>
+
+        <div class="reports">
+            <a class="text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Setting <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu m-0 reports-ul sub-menu">
+                <li><a class="dropdown-item" href="create-user.html"><i
+                            class="fa-solid fa-circle-arrow-right "></i> User</a></li>
+
+            </ul>
+        </div>
+
+        <div class="reports">
+            <a class="text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                API Switching <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu m-0 reports-ul sub-menu">
+                <li><a class="dropdown-item" href="create-user.html"><i
+                            class="fa-solid fa-circle-arrow-right "></i> User</a></li>
+
+            </ul>
+        </div>
+
+    </ul>
+</div>
+</div>
+
+<!-- main section start -->
+    <div class="main-section" id="main">
+        <div class="container-fluid">
+        <div class="row g-3 ">
+            <div class="col-md-7">
+                <h4 style="font-size: 18px; margin-top: 10px; font-weight: 800; color:#065eaf;">List Of Master Distributors</h4>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <input type="search" class="form-control  shadow-none" placeholder="Search">
+                    <!-- <label for="">Search</label> -->
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <select class="form-select shadow-none" id="floatingSelect" aria-label="Floating label select example">
+                      <option selected>Select type</option>
+                      <option value="User ID">User ID</option>
+                      <option value="Mobile Number">Mobile Number</option>
+                      <option value="Name">Name</option>
+                      <option value="Name">E-mail ID</option>
+                    </select>
+                    <!-- <label for="floatingSelect">Select Operator</label> -->
+                  </div>
+            </div>
+
+
+
+            <div class="col-md-1 ">
+                <button class="btn  btn-primary shadow-none"><i class="fa fa-search"></i></button>
+                <button class="btn  btn-success shadow-none text-white"><i class="fa fa-download"></i></button>
+            </div>
+        </div>
+
+
+        </div>
+      
+        <!-- table start -->
+        <div class="recent-transaction">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="recent-box">
+                            <div class="recent-item" style="overflow-x: auto">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">User&nbsp;ID</th>
+                                                <th>Name</th>
+                                                <th>Mobile&nbsp;Number</th>
+                                                <th>Parent&nbsp;ID</th>
+                                                <th>Main&nbsp;Balance</th>
+                                                <th>AePS&nbsp;Balance</th>
+                                                <th>E-mail&nbsp;ID</th>
+                                                <th>Created&nbsp;By</th>
+                                                <th>Status</th>
+                                                <th>Joining&nbsp;Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>RE123</td>
+                                                <td>Km Priyanka</td>
+                                                <td>9966996699</td>
+                                                <td>DI123</td>
+                                                <td>123</td>
+                                                <td>456</td>
+                                                <td>junaid@gmail.com</td>
+                                                <td>Distributor</td>
+                                                <td class="text-success fw-bold">Active</td>
+                                                <td>10-10-2022</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RE123</td>
+                                                <td>Km Priyanka</td>
+                                                <td>9966996699</td>
+                                                <td>DI123</td>
+                                                <td>123</td>
+                                                <td>456</td>
+                                                <td>junaid@gmail.com</td>
+                                                <td>Distributor</td>
+                                                <td class="text-danger fw-bold">InActive</td>
+                                                <td>10-10-2022</td>
+                                            </tr>
+                                        </tbody>
+                                    
+                                       
+                                    </table>
+                                    <div class="modal fade" id="fulldata" aria-hidden="true" aria-labelledby="fulldata" tabindex="-1">
+                                        <div class="modal-dialog modal-mar modal-dialog-scrollable">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title fw-bold" >Full Report</h5>
+                                              <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="table-ul">
+                                                    <ul class="p-0 d-flex justify-content-between">
+                                                        <li>Name</li>
+                                                        <li>Vikash Sharma</li>
+                                                    </ul>
+                                                    <ul class="p-0 d-flex justify-content-between">
+                                                        <li>Name</li>
+                                                        <li>Vikash Sharma</li>
+                                                    </ul>
+                                                    <ul class="p-0 d-flex justify-content-between">
+                                                        <li>Name</li>
+                                                        <li>Vikash Sharma</li>
+                                                    </ul>
+                                                    <ul class="p-0 d-flex justify-content-between">
+                                                        <li>Name</li>
+                                                        <li>Vikash Sharma</li>
+                                                    </ul>
+                                                    <ul class="p-0 d-flex justify-content-between">
+                                                        <li>Name</li>
+                                                        <li>Vikash Sharma</li>
+                                                    </ul>
+                                                </div>
+                                         
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                   
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+             
+            </div>
+        </div>
+        <!-- transaction table end -->
+
+<!-- Scrollable modal -->
+
+
+
+<!-- Scrollable modal end-->
+
+        
+    </div>
+<!-- main section end -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+
+        <script>
+            function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        /* Set the width of the side navigation to 0 */
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+        
+</body>
+
+</html>
